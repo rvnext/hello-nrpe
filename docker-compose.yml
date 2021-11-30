@@ -1,0 +1,11 @@
+version: "3.0"
+services:
+  nrpe:
+    restart: always
+    image: binfalse/nrpe-server:full
+    container_name: nrpe-server
+    ports:
+      - "5666:5666"
+    volumes:
+      - ./etc/:/etc/nagios/nrpe.d/:ro
+    
